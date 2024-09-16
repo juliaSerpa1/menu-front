@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 proteinId: selectedProteinId
             };
 
-            fetch('http://localhost:3000/orders', {
+            fetch('https://nameless-everglades-59789-2a65a3646f45.herokuapp.com/orders', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
