@@ -1,0 +1,247 @@
+body {
+    margin: 0;
+    font-family: 'Rounded Mplus 1c';
+    color: #333;
+    overflow-x: hidden;
+}
+
+.hero {
+    height: 100vh;
+    background: url('https://images.rawpixel.com/image_social_landscape/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMTRfcGhvdG9qb3VybmFsaXNtX3BpenphX2l0YWxpYW5fZm9vZF9pc29sYXRlZF9vbl9hOGY2ZjY3MS02YmQ2LTQ2MTgtYmViMi05MmFjZjk0MTQyYmJfMS5qcGc.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.hero small {
+    position: absolute;
+    top: 68%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    color: white;
+    margin-bottom: 0;
+    text-align:end;
+}
+
+.hero-content {
+    position: absolute;
+    top: 80%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content .btn {
+    display: flex;
+    align-items: center;
+    background-color: #414142;
+    font-weight: bold;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    gap: 10px;
+}
+
+.hero-content .btn:hover {
+    background-color: #808383;
+}
+
+.selection {
+    padding: 20px;
+    text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: calc(200px * 3 + 20px * 2);
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    margin-top: 3rem;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: fit-content;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+
+.card {
+    flex: 0 0 200px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+    margin: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+}
+
+.card.selected h3,
+.card.selected small,
+.card.selected p.price {
+    color: white;
+    font-family: 'Rounded Mplus 1c';
+}
+
+.card.selected p.price {
+    color: #ffc024;
+}
+
+h2, h3, small, p {
+    margin: 10px 0 0;
+    font-family: 'Rounded Mplus 1c';
+}
+
+.price {
+    color: #ee2214;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.card.selected {
+    border: 2px solid #b8b8b8;
+    background-color: #b8b8b8;
+    color: white;
+}
+
+.btn-submit {
+    display: flex;
+    justify-content: center;
+}
+
+.success {
+    display: flex;
+    align-items: center;
+    background-color: #414142;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5rem;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    gap: 10px;
+}
+
+.success:hover {
+    background-color: #808383;
+}
+
+@media (max-width: 600px) {
+    .hero {
+        height: auto;
+        padding: 20px;
+        background-position: center;
+    }
+
+    .hero small {
+        top: auto;
+        left: auto;
+        transform: none;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .hero-content {
+        top: auto;
+        left: auto;
+        transform: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-content .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .carousel-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .card {
+        flex: 1 0 auto;
+        max-width: 90%;
+        margin: 10px 0;
+    }
+
+    .carousel-button.prev,
+    .carousel-button.next {
+        width: 24px;
+        height: 24px;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .carousel-container {
+        width: 100%;
+    }
+
+    .card-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        flex: 0 0 45%;
+        max-width: 200px;
+    }
+}
