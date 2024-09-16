@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const orderId = params.get('id');
 
     if (orderId) {
-        fetch(`http://localhost:3000/orders/${orderId}`)
+        fetch(`https://nameless-everglades-59789-2a65a3646f45.herokuapp.com/orders/${orderId}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Order not found');
@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const { complementId, proteinId } = orderData;
 
                 Promise.all([
-                    fetch(`http://localhost:3000/complement/${complementId}`).then(response => response.json()),
-                    fetch(`http://localhost:3000/proteins/${proteinId}`).then(response => response.json())
+                    fetch(`https://nameless-everglades-59789-2a65a3646f45.herokuapp.com/complement/${complementId}`).then(response => response.json()),
+                    fetch(`https://nameless-everglades-59789-2a65a3646f45.herokuapp.com/proteins/${proteinId}`).then(response => response.json())
                 ])
                     .then(([complementData, proteinData]) => {
                         const orderDetails = document.getElementById('order-details');
